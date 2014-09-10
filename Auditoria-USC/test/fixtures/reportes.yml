@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_estudiantes: 1
+  docente_id: 1
+  comentario: MyText
+
+two:
+  numero_estudiantes: 1
+  docente_id: 1
+  comentario: MyText

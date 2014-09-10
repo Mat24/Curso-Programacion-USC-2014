@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NotesTest</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../packaged/css/semantic.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.js"></script>
+  <script src="../packaged/javascript/semantic.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body id="feed">
+<div class="ui large inverted vertical sidebar menu">
+  <%= link_to "AUDITORIA USC APP","#", :class => "item" %>
+  <div class="item">
+    <b>Reportes</b>
+    <div class="menu">
+      <%= link_to "Ver reportes",reportes_path, :class => "item" %>
+      <%= link_to "Nuevo reporte",new_reporte_path, :class => "item" %>
+    </div>
+  </div>
+  <div class="item">
+    <b>Asignaturas</b>
+    <div class="menu">
+      <%= link_to "Ver asignaturas",asignaturas_path, :class => "item" %>
+      <%= link_to "Nueva asignatura",new_asignatura_path, :class => "item" %>
+    </div>
+  </div>
+  <div class="item">
+    <b>Docentes</b>
+    <div class="menu">
+      <%= link_to "Ver Docente",docentes_path, :class => "item" %>
+      <%= link_to "Nuevo reporte",new_docente_path, :class => "item" %>
+    </div>
+  </div>
+</div>
+<div class="ui celled grid">
+  <div class="seven wide middle column">
+    <div class="ui right floated black launch button">
+      <i class="list layout icon"></i> Menu
+    </div>
+    <h2 class="ui header">
+      <i class="inbox icon"></i>
+      Inbox
+    </h2>
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

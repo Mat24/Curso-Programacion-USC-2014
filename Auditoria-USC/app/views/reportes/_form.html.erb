@@ -1,0 +1,37 @@
+<%= form_for(@reporte) do |f| %>
+  <% if @reporte.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
+
+      <ul>
+      <% @reporte.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+      <p>Asignatura<br>
+      <%=  %>
+      <%= f.select(:asignatura_id,options_from_collection_for_select(Asignatura.all, :id, :nombre), { :class => 'select-block mbn' }) %>
+  </div>
+  <div class="field">
+    <p id="activador">Codigo de la asignatura<br>
+    <input id="reporte_codigo_asignatura" name="reporte[numero_estudiantes]" disabled/>
+  </div>
+  <div class="field">
+    <%= f.label :numero_estudiantes %><br>
+    <%= f.number_field :numero_estudiantes %>
+  </div>
+  <div class="field">
+    <%= f.label :docente_id %><br>
+    <%= f.select(:docente_id,options_from_collection_for_select(Docente.all, :id, :nombre), { :class => 'select-block mbn' }) %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario %><br>
+    <%= f.text_area :comentario %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero estudiantes:</strong>
+  <%= @reporte.numero_estudiantes %>
+</p>
+
+<p>
+  <strong>Docente:</strong>
+  <%= link_to @reporte.docente.nombre, docente_path(@reporte.docente) %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @reporte.comentario %>
+</p>
+
+<p>
+  <strong>Asignatura reportada:</strong>
+  <%= link_to @reporte.asignatura.nombre,asignatura_path(@reporte.asignatura)%>
+</p>
+
+<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
+<%= link_to 'Back', reportes_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @asignatura.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @asignatura.descripcion %>
+</p>
+<p>
+  <strong>Codigo:</strong>
+  <%= @asignatura.codigo %>
+</p>
+
+<p>
+  <strong>Docente:</strong>
+  <td><%= link_to @asignatura.docente.nombre,docente_path(@asignatura.docente) %></td>
+</p>
+
+<p>
+  <strong>Reportes registrados</strong>
+  <% @asignatura.reportes.each do |reporte| %>
+      [<%= link_to reporte.created_at,reporte_path(reporte) %>]
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_asignatura_path(@asignatura) %> |
+<%= link_to 'Back', asignaturas_path %>

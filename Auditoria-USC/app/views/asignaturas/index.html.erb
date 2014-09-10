@@ -1,5 +1,7 @@
-<h1>Listing asignaturas</h1>
-
+<h2 class="ui header">
+  <i class="inbox icon"></i>
+  Listado de asignaturas
+</h2>
 <table>
   <thead>
     <tr>
@@ -18,8 +20,8 @@
         <td><%= asignatura.codigo %></td>
         <td><%= asignatura.descripcion %></td>
         <td><%= link_to asignatura.docente.nombre, docente_path(asignatura.docente) %></td>
-        <td><%= link_to 'Show', asignatura %></td>
-        <td><%= link_to 'Edit', edit_asignatura_path(asignatura) %></td>
+        <td><%= link_to 'Show', asignatura,"data-no-turbolink" => true %></td>
+        <td><%= link_to 'Edit', edit_asignatura_path(asignatura),"data-no-turbolink" => true %></td>
         <td><%= link_to 'Destroy', asignatura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Asignatura', new_asignatura_path %>
+<%= link_to 'New Asignatura', new_asignatura_path,"data-no-turbolink" => true %>

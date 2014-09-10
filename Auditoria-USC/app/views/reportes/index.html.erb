@@ -1,4 +1,7 @@
-<h1>Listing reportes</h1>
+<h2 class="ui header">
+  <i class="inbox icon"></i>
+  Listado de reportes
+</h2>
 
 <table>
   <thead>
@@ -20,8 +23,8 @@
         <td><%= reporte.numero_estudiantes %></td>
         <td><%= link_to reporte.docente.nombre, docente_path(reporte.docente) %></td>
         <td><%= reporte.comentario %></td>
-        <td><%= link_to 'Show', reporte %></td>
-        <td><%= link_to 'Edit', edit_reporte_path(reporte) %></td>
+        <td><%= link_to 'Show', reporte,"data-no-turbolink" => true %></td>
+        <td><%= link_to 'Edit', edit_reporte_path(reporte),"data-no-turbolink" => true %></td>
         <td><%= link_to 'Destroy', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

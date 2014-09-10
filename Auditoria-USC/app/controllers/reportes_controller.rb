@@ -8,7 +8,6 @@ class ReportesController < ApplicationController
     respond_to do |format|
       format.html
       format.json
-      format.xls
       format.csv {send_data @reportes.to_csv}
     end
   end

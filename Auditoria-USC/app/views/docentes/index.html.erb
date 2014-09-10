@@ -1,5 +1,7 @@
-<h1>Listing docentes</h1>
-
+<h2 class="ui header">
+  <i class="inbox icon"></i>
+  Listado de docentes
+</h2>
 <table>
   <thead>
     <tr>
@@ -14,8 +16,8 @@
       <tr>
         <td><%= docente.nombre %></td>
         <td><%= docente.identificacion %></td>
-        <td><%= link_to 'Show', docente %></td>
-        <td><%= link_to 'Edit', edit_docente_path(docente) %></td>
+        <td><%= link_to 'Show', docente,"data-no-turbolink" => true %></td>
+        <td><%= link_to 'Edit', edit_docente_path(docente),"data-no-turbolink" => true %></td>
         <td><%= link_to 'Destroy', docente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Docente', new_docente_path %>
+<%= link_to 'New Docente', new_docente_path,"data-no-turbolink" => true %>

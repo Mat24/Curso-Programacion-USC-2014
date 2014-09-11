@@ -3,7 +3,7 @@
   Listado de reportes
 </h2>
 
-<table>
+<table class="ui inverted table segment">
   <thead>
     <tr>
       <th>Asignatura</th>
@@ -11,7 +11,7 @@
       <th>Numero de estudiantes</th>
       <th>Docente</th>
       <th>Comentarios</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -23,14 +23,14 @@
         <td><%= reporte.numero_estudiantes %></td>
         <td><%= link_to reporte.docente.nombre, docente_path(reporte.docente) %></td>
         <td><%= reporte.comentario %></td>
-        <td><%= link_to 'Show', reporte,"data-no-turbolink" => true %></td>
-        <td><%= link_to 'Edit', edit_reporte_path(reporte),"data-no-turbolink" => true %></td>
-        <td><%= link_to 'Destroy', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', reporte,"data-no-turbolink" => true %></td>
+        <td><%= link_to 'Eliminar', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Reporte', new_reporte_path,"data-no-turbolink" => true %>
+<div class="ui orange button">
+  <%= link_to 'Nuevo reporte', new_reporte_path,"data-no-turbolink" => true %>
+</div>

@@ -2,7 +2,7 @@
   <i class="inbox icon"></i>
   Listado de docentes
 </h2>
-<table>
+<table class="ui inverted table segment">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -16,9 +16,8 @@
       <tr>
         <td><%= docente.nombre %></td>
         <td><%= docente.identificacion %></td>
-        <td><%= link_to 'Show', docente,"data-no-turbolink" => true %></td>
-        <td><%= link_to 'Edit', edit_docente_path(docente),"data-no-turbolink" => true %></td>
-        <td><%= link_to 'Destroy', docente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', docente,"data-no-turbolink" => true %></td>
+        <td><%= link_to 'Eliminar', docente, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

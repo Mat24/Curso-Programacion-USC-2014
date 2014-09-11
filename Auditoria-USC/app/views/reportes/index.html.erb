@@ -24,7 +24,7 @@
         <td><%= link_to reporte.docente.nombre, docente_path(reporte.docente) %></td>
         <td><%= reporte.comentario %></td>
         <td><%= link_to 'Mostrar', reporte,"data-no-turbolink" => true %></td>
-        <td><%= link_to 'Eliminar', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar', reporte, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>

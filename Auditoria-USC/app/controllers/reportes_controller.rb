@@ -97,9 +97,9 @@ class ReportPdf < Prawn::Document
   end
 
   def header
-    #This inserts an image in the pdf file and sets the size of the image
+    #inserta una imagen en el documento, en este caso es la cabezera de nuestro reporte
     image "#{Rails.root}/app/assets/images/usclogo.jpg", width: 80, height: 80
-
+    #inserta texto posicionado, en este caso es el texto de cabezera
     draw_text "Universidad Santiago De Cali", size: 20, style: :bold, :at => [81,695]
     draw_text "Generador de reportes - NotesTest V=1.0", size: 15, :at => [81,680]
     draw_text "Aplicacion creada por:", size: 15, :at => [81,665]
@@ -109,10 +109,10 @@ class ReportPdf < Prawn::Document
   end
 
   def text_content
-    # The cursor for inserting content starts on the top left of the page. Here we move it down a little to create more space between the text and the image inserted above
+    # fijamos el cursor donde se emprezara a escribir el contenido de nuestro reporte
     y_position = cursor - 90
 
-    # The bounding_box takes the x and y coordinates for positioning its content and some options to style it
+    # Como ejemplo encapsulo el texto de la cabezera de la tabla de reportes
     bounding_box([0, y_position], :width => 270) do
       text "Listado de reportes", size: 15, style: :bold
     end
@@ -122,9 +122,7 @@ class ReportPdf < Prawn::Document
   end
 
   def table_content
-    # This makes a call to product_rows and gets back an array of data that will populate the columns and rows of a table
-    # I then included some styling to include a header and make its text bold. I made the row background colors alternate between grey and white
-    # Then I set the table column widths
+    # Agrego estilos a las filas de la tabla
     table product_rows do
       row(0).font_style = :bold
       self.header = true
@@ -134,6 +132,7 @@ class ReportPdf < Prawn::Document
   end
 
   def product_rows
+    # Creo la 'data' de todo el contenido que ca a ir en la tabla
     [['Nº Reporte', 'Asignatura','Codigo','Nº Estudiantes', 'Docente','Comentario']] +
         @products.map do |product|
           [product.id, product.asignatura.nombre,product.asignatura.codigo,product.numero_estudiantes, product.docente.nombre,product.comentario]

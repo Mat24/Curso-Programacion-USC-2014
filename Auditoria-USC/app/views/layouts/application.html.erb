@@ -13,7 +13,7 @@
 </head>
 <body id="feed">
 <div class="ui large inverted vertical sidebar menu">
-  <%= link_to "AUDITORIA USC APP","#", :class => "item" %>
+  <%= link_to "AUDITORIA USC APP",root_path,"data-no-turbolink" => true, :class => "item" %>
   <div class="item">
     <b>Reportes</b>
     <div class="menu">
@@ -35,6 +35,7 @@
       <%= link_to "Nuevo docente",new_docente_path,"data-no-turbolink" => true, :class => "item" %>
     </div>
   </div>
+  <%= link_to "Acerca de...",acerca_de_index_path,"data-no-turbolink" => true, :class => "item" %>
 </div>
 <div class="ui celled grid">
   <div class="seven wide middle column">

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'acerca_de/index'
+
   resources :reportes
 
   get 'home/index'
